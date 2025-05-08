@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gray-300 hover:bg-gray-400;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply flex items-center justify-center rounded-md px-4 py-2 font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-800 hover:bg-gray-200;
+  }
+
+  /* TipTap Editor Styles */
+  .ProseMirror {
+    @apply min-h-[200px] outline-none;
+  }
+
+  .ProseMirror p {
+    @apply my-2;
+  }
+
+  .ProseMirror h1 {
+    @apply my-4 text-3xl font-bold;
+  }
+
+  .ProseMirror h2 {
+    @apply my-3 text-2xl font-bold;
+  }
+
+  .ProseMirror h3 {
+    @apply my-2 text-xl font-semibold;
+  }
+
+  .ProseMirror ul,
+  .ProseMirror ol {
+    @apply ml-6 my-2;
+  }
+
+  .ProseMirror ul {
+    @apply list-disc;
+  }
+
+  .ProseMirror ol {
+    @apply list-decimal;
+  }
+
+  .ProseMirror li {
+    @apply my-1 pl-1;
+  }
+
+  .ProseMirror li > p {
+    @apply inline;
+  }
+
+  /* Chat Message Styles */
+  .chat-message-user {
+    @apply ml-auto rounded-tl-2xl rounded-tr-sm rounded-bl-2xl bg-blue-600 text-white;
+  }
+
+  .chat-message-ai {
+    @apply mr-auto rounded-tl-sm rounded-tr-2xl rounded-br-2xl bg-gray-100 text-gray-900;
+  }
+
+  /* Animation for AI button */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .ai-button {
+    @apply transition-transform hover:animate-[pulse_1.5s_ease-in-out_infinite];
+  }
+
+  /* Animations for transitions */
+  .fade-in {
+    @apply animate-[fadeIn_0.3s_ease-in];
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .slide-up {
+    @apply animate-[slideUp_0.3s_ease-in-out];
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
